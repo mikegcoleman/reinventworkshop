@@ -54,7 +54,7 @@ Be sure to use your own value. Do not copy and paste the value above.
 
 * Run the ***install.php*** script to configure the database by visiting `http://<your lightsail instance public IP>/install.php.` (You need to do this again since the front-end is now pointing to a new database)
 
-        ![](../../images/database-success.jpg?classes=border)
+![](../../images/database-success.jpg?classes=border)
 
 {{% notice tip %}}
 If your web app is still showing the previously deployed database (the one where you created tasks), you may need to use either a new browser window or an incognito window. 
