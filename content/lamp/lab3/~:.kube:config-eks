@@ -1,0 +1,30 @@
+
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://BE5DA1EF2FBE7518CC995FF953F387B4.sk1.us-west-2.eks.amazonaws.com
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNE1USXdOakU0TWpBd05sb1hEVEk0TVRJd016RTRNakF3Tmxvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTVFaCldTYVY3ZlFONGZUQTlNdXdtdjJMSmhDbHVzamRnZ0tUbWZvTGFDTjdmQStNeGJ2bmR3ellHRjYvdWUyNlNCSkQKNWZPc1I3ZFVEWjlZUmhkZWI4bmh1cCtueURvMzhLNkZiK3VkU3VqNTRyTm5jS0RaNDVZL0ZwUWJ5aCs5QzJFbQpUcHdlcFYrc05kTExCUzcyUlcrRUdHM3Zxc0lYc1cweUxGWDduS1JrMk5XZytuMXpmT3pSNCtNcWZ2VXhyY3YxCm9UUTBVS0xYSm1nVEwzRFc0UFBhaW9QTS8wdElXazY0UnZUZjBmNTV5VE9vM3M3ZzdkRy9oOW9pZFlpeVR5ZDUKV09kYVJnRkIvUStrdXhlRFVCQ1Z1ZFg1VkFLNXRYNytJUUwxL1ZmaTlONWpNOUFJQytwdUJjUi95Qnk0L0xQOAp6V3g2My9ab3VFVVRBSzE3OWxjQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFJYTdnc1JjdmdDMTllaGYwMVZkTXZsbkpiNzQKWjVrS3NXODFmWWVKNXRZMkNTTzBSRHVseHpTSHJsMncxQTl5SzBrcEdYYXhHZVZVWFlnS0tlWlhWdmI0eU1KRQpTaGkvL2VyQzA3dVA0YUVRUFFYaU9CVFdRN09jc0RMTzNhMEtEVnJuL2pSaUo0a2Yyd0dqdUJia055M2VuY1pkCmg1TGswbHRNUEJBcHJtbTNtcTU4VEh6QnJFOWtYTGo2Rlh3SlVGNE14cWlPdndCMU51NFAzbDhlUnlDZkhKbU8KNWd1bkJYc09Ma29EQk81bWtRZlQyOWJ1anpNbHdBL1IxeTNuZUxJd29mNlE2WVlwMGtCaXhDdis5V0dmT2tYdQpNd1NYZmtuYll3VnErV2Y2RWtCQkFHOThpTHJEZTlDMkRYa2t3THlRZXpsWDB5aWhMell5Vld6cFl2UT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: aws
+  name: aws
+current-context: aws
+kind: Config
+preferences: {}
+users:
+- name: aws
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      command: aws-iam-authenticator
+      args:
+        - "token"
+        - "-i"
+        - "mike-eks"
+        # - "-r"
+        # - "<role-arn>"
+      # env:
+        # - name: AWS_PROFILE
+        #   value: "<aws-profile>"
